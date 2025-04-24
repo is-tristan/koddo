@@ -4,6 +4,8 @@ import { animate, inView } from "motion";
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    console.log("Site.js loaded");
+
     /**
      * Nav active when section is in view
      */

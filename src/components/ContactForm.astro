@@ -1,5 +1,6 @@
 ---
 import "../styles/form.scss";
+import "../styles/choices.scss"
 ---
 
 <form
@@ -15,7 +16,7 @@ import "../styles/form.scss";
         <input
             type="hidden"
             name="access_key"
-            value="61e46238-61f5-431a-89cc-736354f1d55e"
+            value="a8783b79-bafb-44dd-a15a-98e74737197d"
         />
 
         <input type="hidden" name="redirect" value="#" />
@@ -153,75 +154,8 @@ import "../styles/form.scss";
             <button class="btn primary" type="submit">Send message</button>
         </div>
     </fieldset>
-
-    <link rel="stylesheet" href="src/libs/choices/choices.min.css" />
-    <script src="../libs/choices/choices.min.js"></script>
-    <script is:inline>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Initialize Choices.js for all select elements
-            document.querySelectorAll("select").forEach((select) => {
-                new Choices(select, {
-                    searchEnabled: false,
-                    itemSelectText: "",
-                    shouldSort: false,
-                });
-            });
-
-            // Handle form submission
-            const form = document.getElementById("contactForm");
-            const successMessage = document.querySelector(".formSuccess");
-            const checkmark = document.querySelector(".successMark");
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                // Hide the form
-                form.style.display = "none";
-
-                // Show success message
-                successMessage.style.display = "flex";
-                checkmark.style.display = "block";
-
-                // Scroll to the confirmation message
-                successMessage.scrollIntoView({ behavior: "smooth", block: "start" });
-
-                // Load confetti script only if not already loaded
-                function triggerConfettiAndSend() {
-                    confetti({
-                        particleCount: 120,
-                        spread: 70,
-                        origin: { y: 0.6 },
-                    });
-
-                    setTimeout(async () => {
-                        const formData = new FormData(form);
-                        // Submit via AJAX
-                        await fetch(form.action, {
-                            method: "POST",
-                            body: formData,
-                        });
-                        // Reset form
-                        form.reset();
-                    }, 700);
-                }
-
-                if (!window.confetti) {
-                    const script = document.createElement("script");
-                    script.src =
-                        "https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js";
-                    script.onload = triggerConfettiAndSend;
-                    document.body.appendChild(script);
-                } else {
-                    triggerConfettiAndSend();
-                }
-            });
-
-            // Reset the form fields if page reloads
-            window.onload = function () {
-                form.reset();
-            };
-        });
-    </script>
 </form>
+
 <div
     class="formSuccess border bgLight shadow radius"
     data-delay="1"
@@ -247,3 +181,5 @@ import "../styles/form.scss";
         as possible.
     </p>
 </div>
+
+<script src="/src/scripts/form.js" type="module" is:inline></script>
