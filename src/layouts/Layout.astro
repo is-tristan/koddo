@@ -3,6 +3,7 @@ import "../styles/global.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import AfterFooter from "../components/AfterFooter.astro";
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -73,6 +74,8 @@ import AfterFooter from "../components/AfterFooter.astro";
 		<Footer />
 
 		<AfterFooter />
+
+		<Analytics />
 
 	</body>
 
