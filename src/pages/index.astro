@@ -1,0 +1,237 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+import Logos from "../components/Logos.astro";
+import Cta from "../components/Cta.astro";
+import SolutionsGrid from "../components/SolutionsGrid.astro";
+import Faqs from "../components/Faqs.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<Layout>
+
+    <section id="banner" class="row banner homeBanner">
+
+        <div class="container">
+
+            <Heading
+                icon="/src/assets/icons/icon-logo-mark.svg"
+                loading="eager"
+                titleTag="h1"
+                titleClass="fadeUp"
+                title="Custom web design and development studio."
+                subtitle="Modern websites. Real results. Built for your brand."
+            />
+
+            <div class="buttons">
+
+                <a href="#scalability" class="btn primary">
+    
+                    <span>Learn More</span>
+    
+                </a> <!-- .btn -->
+    
+            </div>  <!-- .buttons -->
+
+        </div> <!-- .container -->
+
+    </section> <!-- #banner -->
+
+    <section id="scalability" class="row hasWidth shadow radius border bgLight animated tilted">
+
+            <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-scale.svg"
+                loading="eager"
+                titleTag="h2" 
+                titleWidth="35rem"
+                title="Built to scale. Ready for what's next."
+                subtitle="At Koddo, we use agile, future-friendly tools — so when the web evolves, your site stays ahead."
+            />
+
+            <Logos />
+
+            <Cta type="row" bgColor="var(--lightAlt)" title="Why use modern stacks?" btnText="Read advantages" btnLink="#advantages"></Cta>
+
+        </div> <!-- .container -->
+
+    </section> <!-- #scalability -->
+
+    <section id="advantages" class="row plusPadding">
+
+        <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-stack.svg"
+                titleTag="h2" 
+                titleClass="fadeUp"
+                titleWidth="35rem"
+                title="Advantages of modern stack solutions."
+                subtitle="Smarter foundations, better results."
+            />
+
+            <div class="cols">
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="0.25">
+
+                    <img src="/src/assets/icons/icon-lightning.svg" alt="Lightning Bolt" loading="lazy" />
+
+                    <h3>Better Performance</h3>
+
+                    <p>Modern frameworks like React and Astro are built for speed — meaning your site loads fast, ranks better, and keeps users engaged.</p>
+
+                </div> <!-- .col -->
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="0.5">
+
+                    <img src="/src/assets/icons/icon-lock.svg" alt="Lock" loading="lazy" />
+
+                    <h3>More secure</h3>
+
+                    <p>With static and headless architectures, there's less to break and fewer moving parts — so your site stays secure and runs smoothly without constant patching.</p>
+
+                </div> <!-- .col -->
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="0.75">
+
+                    <img src="/src/assets/icons/icon-rocket.svg" alt="Rocket" loading="lazy" />
+
+                    <h3>Built to grow</h3>
+
+                    <p>Modern stacks are flexible and scalable by nature — whether you're evolving your brand or adding new features, your site won’t need to be rebuilt from scratch.</p>
+
+                </div> <!-- .col -->
+
+            </div> <!-- .cols -->
+
+            <Cta type="row" bgColor="var(--light)" title="Check out our solutions" btnText="View solutions" btnLink="#solutions"></Cta>
+
+        </div> <!-- .container -->
+
+    </section> <!-- #advantages -->
+
+    <section id="solutions" class="row hasWidth shadow radius border bgLight">
+
+        <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-lightbulb.svg"
+                titleTag="h2"
+                titleClass="fadeUp"
+                titleWidth="35rem"
+                title="Smart, scalable, and beautifully built."
+                subtitle="No recycled designs or repurposed templates — just custom work built for your brand."
+            />
+
+            <SolutionsGrid />
+
+            <Cta type="row" bgColor="var(--lightAlt)" title="Have questions?" btnText="Read our FAQs" btnLink="#faqs"></Cta>
+
+        </div> <!-- .container -->
+
+    </section> <!-- #solutions -->
+
+    <section id="about" class="row plusPadding">
+
+        <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-search.svg"
+                titleTag="h2"
+                titleClass="fadeUp"
+                titleWidth="35rem"
+                title="Why work with us?"
+                subtitle="We're the designers, developers, and project leads — so when you work with us, you're working directly with the people doing the work. No middle-men. No broken communication. Just a more personal, thoughtful process than you'd ever get with a big agency."
+            />
+
+            <div class="cols">
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="0.25">
+
+                    <div class="colHeading">
+
+                        <img src="/src/assets/icons/icon-users.svg" alt="Users Icon" loading="lazy" />
+
+                        <h3>You work directly with us</h3>
+
+                    </div> <!-- .colHeading -->
+
+                    <p>No salespeople or account managers — just the people designing and building your site.</p>
+
+                </div> <!-- .col -->
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="0.75">
+
+                    <div class="colHeading">
+
+                        <img src="/src/assets/icons/icon-laptop-mobile.svg" alt="Laptop & Mobile Icon" loading="lazy" />
+
+                        <h3>Modern tech, clean results</h3>
+
+                    </div> <!-- .colHeading -->
+                    
+                    <p>React, SSGs, headless CMSs — faster, leaner, easier to manage.</p>
+
+                </div> <!-- .col -->
+
+                <div class="col radius shadow border bgLight fadeUp" data-delay="1">
+
+                    <div class="colHeading">
+
+                        <img src="/src/assets/icons/icon-smiley.svg" alt="Smiley Face Icon" loading="lazy" />
+
+                        <h3>Focused on outcomes</h3>
+
+                    </div> <!-- .colHeading -->
+
+                    <p>We don't measure success by hours billed, but by delivering results that drive real business value.</p>
+
+                </div> <!-- .col -->
+
+            </div> <!-- .cols -->
+
+            <Cta type="row" bgColor="var(--light)" title="Read to start your next project?" btnText="Contact us" btnLink="#contact"></Cta>
+
+        </div> <!-- .container -->
+
+    </section> <!-- #about -->
+
+    <section id="faqs" class="row hasWidth shadow radius border bgLight">
+
+        <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-question-mark.svg"
+                titleTag="h2"
+                titleClass="fadeUp"
+                title="Frequently asked questions."
+                subtitle="If these don't answer your questions, feel free to ask us directly."
+            />
+
+            <Faqs />
+
+            </div> <!-- .container -->
+
+    </section> <!-- #faqs -->
+
+    <section id="contact" class="row plusPadding">
+
+        <div class="container">
+
+            <Heading 
+                icon="/src/assets/icons/icon-confetti.svg"
+                titleTag="h2"
+                titleClass="fadeUp"
+                titleWidth="35rem"
+                title="Let's work together."
+                subtitle="We ask a few questions up front to make sure we're a good fit. Takes less than a minute."
+            />
+
+            <ContactForm />
+
+        </div> <!-- .container -->
+
+    </section> <!-- #about -->
+
+</Layout> <!-- End Layout -->

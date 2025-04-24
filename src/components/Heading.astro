@@ -1,0 +1,33 @@
+---
+const { icon, loading, titleTag, titleClass, titleWidth, title, subtitle } = Astro.props;
+---
+
+<div class="heading">
+
+    <div class="icon">
+
+        <img width="32" height="32" src={icon} alt={title} aria-hidden="true" loading={loading ? "eager" : "lazy"} />
+
+    </div>
+
+    <!-- .icon -->
+
+    {
+        titleTag === "h1" ? (
+            <h1 class={titleClass} style={`max-width: ${titleWidth}`}>{title}</h1>
+        ) : titleTag === "h2" ? (
+            <h2 class={titleClass} style={`max-width: ${titleWidth}`}>{title}</h2>
+        ) : titleTag === "h3" ? (
+            <h3 style={`max-width: ${titleWidth}`}>{title}</h3>
+        ) : titleTag === "h4" ? (
+            <h4 style={`max-width: ${titleWidth}`}>{title}</h4>
+        ) : titleTag === "h5" ? (
+            <h5 style={`max-width: ${titleWidth}`}>{title}</h5>
+        ) : titleTag === "h6" ? (
+            <h6 style={`max-width: ${titleWidth}`}>{title}</h6>
+        ) : null
+    }
+
+    <p>{subtitle}</p>
+    
+</div> <!-- .heading -->

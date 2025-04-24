@@ -1,0 +1,104 @@
+---
+import "../styles/header.scss"
+---
+
+<header id="header" class="header border shadow radius"> 
+
+    <div class="container r">
+
+        <div class="logo">
+
+            <a href="/">
+
+                <img
+                    src="/src/assets/logos/logo-duo-color-dark.svg"
+                    alt="Koddo Logo"
+                    width="128"
+                    height="32"
+                    loading="eager"
+                    decoding="async"
+                />
+
+            </a>
+
+        </div> <!-- .logo -->
+
+        <nav class="nav hiddenS">
+
+            <a href="#scalability">Scalability</a>
+
+            <a href="#advantages">Advantages</a>
+
+            <a href="#solutions">Solutions</a>
+
+            <a href="#about">About</a>
+
+            <a href="#faqs">FAQs</a>
+
+        </nav> <!-- .nav -->
+
+        <div class="cta">
+
+            <a href="#contact" class="btn primary">
+
+                <span>Contact</span>
+
+            </a> <!-- .btn -->
+
+            <div class="hamburger hiddenL">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div> <!-- .hamburger -->
+
+        </div> <!-- .cta -->
+
+    </div> <!-- .container -->
+
+</header> <!-- #header -->
+
+<div class="navMobile hiddenL shadow border">
+
+    <nav class="container">
+
+        <a href="#scalability">Scalability</a>
+
+        <a href="#advantages">Advantages</a>
+
+        <a href="#solutions">Solutions</a>
+
+        <a href="#about">About</a>
+
+        <a href="#faqs">FAQs</a>
+
+        <a href="#contact" class="btn primary">
+
+            <span>Contact</span>
+
+        </a> <!-- .btn -->
+
+    </nav> <!-- .container -->
+
+</div> <!-- .navMobile -->
+
+<script is:inline>
+    const navMobile = document.querySelector(".navMobile");
+    const hamburger = document.querySelector(".hamburger");
+
+    hamburger.addEventListener("click", () => {
+        navMobile.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        document.documentElement.classList.toggle("noScroll");
+    });
+
+    window.addEventListener("click", (e) => {
+        if (!navMobile.contains(e.target) && !hamburger.contains(e.target)) {
+            navMobile.classList.remove("active");
+            hamburger.classList.remove("active");
+            document.documentElement.classList.remove("noScroll");
+        }
+    });
+
+</script>

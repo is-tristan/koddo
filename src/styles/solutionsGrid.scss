@@ -1,0 +1,98 @@
+.bentogrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.bentoCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
+}
+
+.colContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.colheading {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+
+    h3 {
+        max-width: unset;
+        margin: 0;
+    }
+
+    p {
+        font-weight: 500;
+    }
+}
+
+.bentoImage {
+    max-height: 20rem;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.devCol,
+.wpCol {
+    @media (min-width: 1200px) {
+        width: calc(66.666% - 0.5rem);
+    }
+}
+
+.designCol,
+.apiCol {
+    flex-direction: column-reverse;
+
+    @media (min-width: 1200px) {
+        flex-direction: column;
+        width: calc(33.33% - 0.5rem);
+    }
+}
+
+.devCol,
+.wpCol {
+    padding-bottom: 0;
+
+    .bentoImage {
+        object-position: top center;
+    }
+}
+
+.designCol,
+.apiCol {
+    padding-bottom: 0;
+
+    .bentoImage {
+        object-position: top center;
+    }
+
+    @media (min-width: 1200px) {
+        padding-right: 0;
+
+        .colContent {
+            padding-right: 2rem;
+        }
+
+        .bentoImage {
+            margin-right: -7.5rem;
+            object-position: center;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "css.format.enable": true,
+    "editor.defaultFormatter": null,
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
+}

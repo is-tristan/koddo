@@ -1,0 +1,89 @@
+---
+---
+
+<aside class="logos">
+
+    <p style="font-size: 0.875rem; font-weight: 600; color: #b2b2b2">Powered by</p>
+
+    <div class="logoItems">
+
+        <a class="logoItem" href="https://astro.build" target="_blank" rel="noopener">
+
+            <img src="/src/assets/logos/logo-astro.svg" alt="Astro Logo" width="128" height="64" loading="lazy"/>
+
+        </a> <!-- .logoItem -->
+
+        <a class="logoItem" href="https://react.dev" target="_blank" rel="noopener">
+
+            <img src="/src/assets/logos/logo-react.svg" alt="React Logo" width="128" height="64" loading="lazy"/>
+
+        </a> <!-- .logoItem -->
+
+        <a class="logoItem" href="https://www.sanity.io/" target="_blank" rel="noopener">
+
+            <img src="/src/assets/logos/logo-sanity.svg" alt="Sanity Logo" width="128" height="64" loading="lazy"/>
+
+        </a> <!-- .logoItem -->
+
+        <a class="logoItem" href="https://www.strapi.io/" target="_blank" rel="noopener">
+
+            <img src="/src/assets/logos/logo-strapi.svg" alt="Strapi Logo" width="128" height="64" loading="lazy"/>
+
+        </a> <!-- .logoItem -->
+
+    </div> <!-- .logoItems -->
+
+</aside> <!-- .logos -->
+
+<style>
+
+    .logos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        gap: 1.5rem;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            padding: 1.5rem 0;
+        }
+    }
+
+    .logoItems {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 35rem;
+        margin: 0 auto;
+    }
+
+    .logoItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: calc(50% - 1rem);
+        transition: var(--ease);
+
+        @media (min-width: 768px) {
+            flex: 1;
+            gap: 3rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 6rem;
+            max-height: 5rem;
+        }
+    }
+
+    .logoItem:hover {
+        transform: translateY(-0.25rem);
+    }
+
+</style>

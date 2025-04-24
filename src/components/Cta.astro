@@ -1,0 +1,46 @@
+---
+const { type, bgColor, title, description, btnText, btnLink } = Astro.props;
+---
+
+<div style={`background: ${bgColor}`} class={`cta ${type} fadeIn`} data-delay="0.25">
+
+    <h3>{title}</h3>
+
+    <p>{description}</p>
+
+    <a href={btnLink} class="btn primary">{btnText}</a>
+
+</div>
+
+<style lang="scss">
+
+    .cta {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 1.5rem;
+        border: 2px solid var(--border);
+        border-radius: var(--colRadius);
+        box-shadow: var(--shadow);
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 3rem;
+            width: fit-content;
+        }
+    }
+
+    h3 {
+        max-width: unset;
+        width: fit-content;
+    }
+
+</style>

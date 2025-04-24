@@ -1,0 +1,152 @@
+---
+import "../styles/faqs.scss";
+
+const { title, content } = Astro.props;
+
+const faqContent = [
+
+    {
+        title: "How is Koddo different from an agency?",
+        content: "We're a small studio — just two people doing the work directly. No account managers, no middle layers, no handoffs. You'll talk to the same people who are designing and building your site. That means faster feedback loops and better outcomes."
+    },
+
+    {
+        title: "What kind of websites do you build?",
+        content: "We specialize in fast, modern marketing sites — typically built with React, Static Site Generators (like Astro or Next.js), and headless CMSs like Sanity or WordPress. Most of our projects are for startups, SaaS products, or design-forward brands that need custom solutions."
+    },
+
+    {
+        title: "Do you offer design as well as development?",
+        content: "Yes. We handle both design and development in-house. If you already have a design, we're happy to jump in as your dev partner. If you need both, we can design and build the full experience from scratch."
+    },
+
+    {
+        title: "How long does a typical project take?",
+        content: "Most projects take between 4-8 weeks depending on scope. However, we'll be able to give you a more precise timeframe after our initial meeting."
+    },
+
+    {
+        title: "What do you charge?",
+        content: "We work on fixed project pricing based on your needs — no hourly billing. Most of our builds range from €4k-€15k (or USD equivalent) depending on complexity and features."
+    },
+
+    {
+        title: "What payment methods do you accept?",
+        content: "We accept bank transfers, PayPal, and crypto."
+    },
+
+    {
+        title: "What's the process like?",
+        content: "We'll start with a short call to understand what you're trying to achieve. From there, we'll put together a proposal. Once we kick off, it's a collaborative process with regular check-ins. Simple, transparent, and low-stress."
+    },
+
+    {
+        title: "Can I update the site myself?",
+        content: "If you want to manage your own content, we can set you up with a headless CMS like Sanity or WordPress. We'll make sure you're comfortable using it before we wrap up the project. If you prefer to have us manage it, we can do that too."
+    },
+
+    {
+        title: "How does hosting work?",
+        content: "We can set you up with a hosting provider like Vercel, Digital Ocean or Netlify. We'll make sure you have everything you need to manage your site after we're done."
+    },
+
+    {
+        title: "Do you handle SEO?",
+        content: "Yes. We build all our sites with SEO in mind from the start. We'll also provide you with a checklist of things to do after launch to help you get the most out of your site."
+    },
+
+    {
+        title: "Do you offer ongoing support?",
+        content: "Yes. We can provide ongoing support and maintenance for your site after launch. Just let us know what you need."
+    },
+
+    {
+        title: "What if I have more questions?",
+        content: "No problem! Just reach out to us at <a href='mailto:hello@koddo.io'>hello@koddo.io</a> and we'll be happy to help."
+    },
+
+]
+
+---
+
+<div class="faqitems" id="faqitems">
+
+    {faqContent.map((item, idx) => (
+
+        <>
+
+            <div class="faqItem" data-idx={idx}>
+
+                <div class="faqItemHeading">
+
+                    <h3>{item.title}</h3>
+
+                    <button class="faqAction" aria-expanded="false" aria-controls={`faq-content-${idx}`}>
+
+                        <span></span><span></span>
+
+                    </button> {/* .faqAction */}
+
+                </div> {/* .faqHeading */}
+
+                <div class="faqItemContent" id={`faq-content-${idx}`} style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+
+                    <p set:html={item.content}></p>
+
+                </div> {/* .faqItemContent */}
+
+            </div> {/* .faqItem */}
+
+        </>
+
+    ))}
+
+</div> <!-- .faqitems -->
+
+<script is:inline>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faqItem");
+    const active = "active";
+
+    faqItems.forEach((item) => {
+        const heading = item.querySelector(".faqItemHeading");
+        const content = item.querySelector(".faqItemContent");
+        const button = item.querySelector(".faqAction");
+        
+        heading.addEventListener("click", () => {
+            const isExpanded = button.getAttribute("aria-expanded") === "true";
+            
+            // Close all other items first
+            if (!isExpanded) {
+                // Close all other expanded items
+                faqItems.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        const otherButton = otherItem.querySelector(".faqAction");
+                        const otherContent = otherItem.querySelector(".faqItemContent");
+                        
+                        if (otherButton.getAttribute("aria-expanded") === "true") {
+                            otherButton.setAttribute("aria-expanded", "false");
+                            otherContent.style.maxHeight = "0";
+                            otherItem.classList.remove(active);
+                        }
+                    }
+                });
+            }
+            
+            // Toggle current item
+            button.setAttribute("aria-expanded", !isExpanded);
+            
+            // Toggle State
+            if (!isExpanded) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                item.classList.add(active);
+            } else {
+                content.style.maxHeight = "0";
+                item.classList.remove(active);
+            }
+        });
+    });
+});
+
+</script>
